@@ -6,7 +6,7 @@
 /*   By: scarboni <scarboni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 17:40:34 by scarboni          #+#    #+#             */
-/*   Updated: 2022/02/06 17:47:32 by scarboni         ###   ########.fr       */
+/*   Updated: 2022/02/06 18:18:53 by scarboni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		main(int argc, char *argv[])
 		return 0;
 	}
 	for (int i = 1; i < argc; i++)
-		std::cout << string_to_upper(argv[i]);
+		std::cout << ::string_to_upper(argv[i]);
 	std::cout << std::endl;
 	return 0;
 }

@@ -6,11 +6,11 @@
 #    By: scarboni <scarboni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 22:36:55 by saray             #+#    #+#              #
-#    Updated: 2022/02/06 18:00:36 by scarboni         ###   ########.fr        #
+#    Updated: 2022/03/01 13:48:19 by scarboni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 				= Megaphone
+NAME 				= megaphone
 
 OBJ_PATH			= bin/
 
@@ -30,14 +30,13 @@ OBJ 		= 	$(addprefix $(OBJ_PATH), $(SRC_FILES:cpp=o))
 
 OBJ_PATHS_INIT			= $(OBJ_PATH)
 
-all: $(OBJ_PATHS_INIT)  $(NAME)
-
+all: $(NAME)
 
 $(OBJ_PATHS_INIT)	:
 	@echo "Generating bin folder and subfolders" $@
 	@mkdir -p  $@  
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ_PATHS_INIT)  $(OBJ)
 	$(CXX) $(CPPFLAGS) -o $(NAME) $(OBJ) $(LDFLAGS)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.cpp $(HEADERS_FILES)
@@ -56,5 +55,10 @@ fclean:
 	@echo "\033[0m"		
 
 re: fclean all
+
+test:	$(NAME)
+	./megaphone "shhhhh... I think the students are asleep..."
+	./megaphone Damnit " ! " "Sorry students, I thought this thing was off."
+	./megaphone
 
 .PHONY: clean fclean re bonus

@@ -139,17 +139,12 @@ void Contact::printFieldsFullLine( int id ) const
 
 void Contact::_printColumnContent(std::string value)
 {
-	bool is_too_long = false;
-	if(value.length() >= 10)
+	if(value.length() > 10)
 	{
-		is_too_long = true;
 		value.resize(9);
+		value = value + ".";
 	}
-	if(!is_too_long)
-		std::cout << " ";
-	std::cout << std::setw(9) << value;
-	if(is_too_long)
-		std::cout << ".";
+	std::cout << std::setw(10) << value;
 }
 
 void Contact::_printTitles( int maxTitle )
