@@ -6,7 +6,7 @@
 #    By: scarboni <scarboni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 22:36:55 by saray             #+#    #+#              #
-#    Updated: 2022/03/03 10:08:10 by scarboni         ###   ########.fr        #
+#    Updated: 2022/03/03 17:40:05 by scarboni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,6 @@ fclean:
 re: fclean all
 
 test:	$(NAME)
-	./$(NAME)
+	valgrind ./$(NAME)
 
 .PHONY: clean fclean re bonus
