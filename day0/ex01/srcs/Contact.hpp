@@ -20,6 +20,7 @@ class Contact
 		
 		void printFieldsLight( int id ) const;
 		void printFieldsFull( int id ) const;
+		void printFieldsFullLine( int id ) const;
 
 		static Contact buildContact();
 		static void printTitlesFull(void);

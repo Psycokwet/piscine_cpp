@@ -101,12 +101,13 @@ void			PhoneBook::search() const
 		return;
 	}
 	Contact::printTitlesFull();
-	this->contacts[i].printFieldsFull(i);
+	this->contacts[i].printFieldsFullLine(i);
 }
 
 void			PhoneBook::start()
 {
 	std::string buff;
+	std::cout << "Wait for command ADD|EXIT|SEARCH " << std::endl;
 	while (!this->do_exit && std::getline(std::cin, buff))
 	{
 		if (buff == "ADD")

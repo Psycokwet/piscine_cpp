@@ -126,6 +126,17 @@ void Contact::printFieldsFull( int id ) const
 	this->_printFields(MAX_FIELDS, id);
 }
 
+void Contact::printFieldsFullLine( int id ) const
+{
+	int i = 0;
+	std::cout << "id\t\t" << id << std::endl;
+	while (i < MAX_FIELDS)
+	{
+		std::cout << fields_name[i]+"\t" << this->_fields[i] << std::endl;
+		i++;
+	}
+}
+
 void Contact::_printColumnContent(std::string value)
 {
 	bool is_too_long = false;
