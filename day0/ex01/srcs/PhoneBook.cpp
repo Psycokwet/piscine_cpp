@@ -100,7 +100,6 @@ void			PhoneBook::search() const
 		std::cout << "Bad selection " << buff << std::endl;
 		return;
 	}
-	Contact::printTitlesFull();
 	this->contacts[i].printFieldsFullLine(i);
 }
 
