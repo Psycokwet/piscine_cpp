@@ -7,6 +7,8 @@ std::string my_replace(std::string line, std::string to_replace, std::string new
 	std::string tmp = line;
 	std::string newLine = "";
 	unsigned long index = tmp.find(to_replace);
+	if(to_replace.length() < 1)
+		return line;
 	while(index !=std::string::npos)
 	{
 		newLine = newLine + tmp.substr(0, index) + newToken;

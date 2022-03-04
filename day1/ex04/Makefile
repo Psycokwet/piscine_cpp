@@ -6,7 +6,7 @@
 #    By: scarboni <scarboni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 22:36:55 by saray             #+#    #+#              #
-#    Updated: 2022/03/04 11:04:20 by scarboni         ###   ########.fr        #
+#    Updated: 2022/03/04 12:28:43 by scarboni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,16 +58,15 @@ fclean:
 
 re: fclean all
 
-RES_FILE	+=	exec_log.txt
 test:	$(NAME)
-	valgrind ./$(NAME) > $(RES_FILE)
-	valgrind ./$(NAME) Makefile " " "%" >> $(RES_FILE)
-	valgrind ./$(NAME) Makefile.replace "	" "&&&&" >> $(RES_FILE)
-	valgrind ./$(NAME) Makefile.replace.replace "&&&&" "" >> $(RES_FILE)
-	valgrind ./$(NAME) Pwett PATH PONEY >> $(RES_FILE)
-	valgrind ./$(NAME) Makefile >> $(RES_FILE)
-	valgrind ./$(NAME) Makefile PATH >> $(RES_FILE)
-	valgrind ./$(NAME) srcs/main.cpp include "I'm a nice and sweet pony !" >> $(RES_FILE)
-	valgrind ./$(NAME) srcs/main.cpp include "I'm a nice and sweet pony !" gdffdgdfg >> $(RES_FILE)
+	valgrind ./$(NAME) 
+	valgrind ./$(NAME) Makefile " " "%" 
+	valgrind ./$(NAME) Makefile.replace "	" "&&&&" 
+	valgrind ./$(NAME) Makefile.replace.replace "&&&&" "" 
+	valgrind ./$(NAME) Pwett PATH PONEY 
+	valgrind ./$(NAME) Makefile 
+	valgrind ./$(NAME) Makefile PATH 
+	valgrind ./$(NAME) srcs/main.cpp include "I'm a nice and sweet pony !" 
+	valgrind ./$(NAME) srcs/main.cpp include "I'm a nice and sweet pony !" gdffdgdfg 
 
 .PHONY: clean fclean re bonus
