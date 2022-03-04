@@ -7,16 +7,11 @@ std::string my_replace(std::string line, std::string to_replace, std::string new
 	std::string tmp = line;
 	std::string newLine = "";
 	unsigned long index = tmp.find(to_replace);
-		std::cout << "START " << std::endl;
 	while(index !=std::string::npos)
 	{
-		std::cout << tmp << ", index:" << index << std::endl;
 		newLine = newLine + tmp.substr(0, index) + newToken;
-		std::cout << newLine << ", nl"<< std::endl;
 		tmp = tmp.substr(index + to_replace.length(), tmp.length() - index);
-		std::cout << tmp << ", tmp"<< std::endl;
 		index = tmp.find(to_replace);
-		std::cout << tmp << ", RESULT INDEX:" << index << std::endl;
 	}
 	return newLine + tmp;
 }
