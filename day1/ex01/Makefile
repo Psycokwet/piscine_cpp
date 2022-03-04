@@ -6,7 +6,7 @@
 #    By: scarboni <scarboni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 22:36:55 by saray             #+#    #+#              #
-#    Updated: 2022/03/03 10:42:35 by scarboni         ###   ########.fr        #
+#    Updated: 2022/03/04 10:20:43 by scarboni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME 				= zombies
 
 OBJ_PATH			= bin/
 
-CXX 				= clang++
+CXX 				= c++
 
 CPPFLAGS 			= -W -Wall -Wextra -Werror -g3 -pedantic -std=c++98
 

@@ -6,11 +6,11 @@
 #    By: scarboni <scarboni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 22:36:55 by saray             #+#    #+#              #
-#    Updated: 2022/03/04 10:21:09 by scarboni         ###   ########.fr        #
+#    Updated: 2022/03/04 10:21:20 by scarboni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 				= "war:("
+NAME 				= mySed
 
 OBJ_PATH			= bin/
 
@@ -20,10 +20,8 @@ CPPFLAGS 			= -W -Wall -Wextra -Werror -g3 -pedantic -std=c++98
 
 SRC_PATH			= ./srcs/
 
-SRCS = 	main.cpp \
-		HumanA.cpp \
-		HumanB.cpp \
-		Weapon.cpp
+SRCS = 	main.cpp
+
 
 
 SRC_FILES	+=	$(SRCS)
@@ -60,7 +58,14 @@ fclean:
 
 re: fclean all
 
+RES_FILE	+=	exec_log.txt
 test:	$(NAME)
-	valgrind ./$(NAME)
+	valgrind ./$(NAME) > $(RES_FILE)
+	valgrind ./$(NAME) Makefile " " "%" >> $(RES_FILE)
+	valgrind ./$(NAME) Pwett PATH PONEY >> $(RES_FILE)
+	valgrind ./$(NAME) Makefile >> $(RES_FILE)
+	valgrind ./$(NAME) Makefile PATH >> $(RES_FILE)
+	valgrind ./$(NAME) srcs/main.cpp include "I'm a nice and sweet pony !" >> $(RES_FILE)
+	valgrind ./$(NAME) srcs/main.cpp include "I'm a nice and sweet pony !" gdffdgdfg >> $(RES_FILE)
 
 .PHONY: clean fclean re bonus
