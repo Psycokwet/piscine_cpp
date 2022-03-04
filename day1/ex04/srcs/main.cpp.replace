@@ -1,6 +1,6 @@
-# include <iostream>
-# include <fstream>
-# include <string>
+# I'm a nice and sweet pony ! <iostream>
+# I'm a nice and sweet pony ! <fstream>
+# I'm a nice and sweet pony ! <string>
 
 std::string my_replace(std::string line, std::string to_replace, std::string newToken)
 {

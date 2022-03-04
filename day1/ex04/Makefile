@@ -6,7 +6,7 @@
 #    By: scarboni <scarboni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 22:36:55 by saray             #+#    #+#              #
-#    Updated: 2022/03/04 10:21:20 by scarboni         ###   ########.fr        #
+#    Updated: 2022/03/04 11:04:20 by scarboni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,6 +62,8 @@ RES_FILE	+=	exec_log.txt
 test:	$(NAME)
 	valgrind ./$(NAME) > $(RES_FILE)
 	valgrind ./$(NAME) Makefile " " "%" >> $(RES_FILE)
+	valgrind ./$(NAME) Makefile.replace "	" "&&&&" >> $(RES_FILE)
+	valgrind ./$(NAME) Makefile.replace.replace "&&&&" "" >> $(RES_FILE)
 	valgrind ./$(NAME) Pwett PATH PONEY >> $(RES_FILE)
 	valgrind ./$(NAME) Makefile >> $(RES_FILE)
 	valgrind ./$(NAME) Makefile PATH >> $(RES_FILE)
