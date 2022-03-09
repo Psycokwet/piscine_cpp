@@ -6,23 +6,22 @@
 #    By: scarboni <scarboni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 22:36:55 by saray             #+#    #+#              #
-#    Updated: 2022/03/09 11:49:38 by scarboni         ###   ########.fr        #
+#    Updated: 2022/03/09 12:28:34 by scarboni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 				= zombies
+NAME 				= ClapTrap
 
 OBJ_PATH			= bin/
 
 CXX 				= c++
 
-CPPFLAGS 			=  -Wall -Wextra -Werror -g3  -std=c++98
+CPPFLAGS 			= -Wall -Wextra -Werror -g3 -std=c++98
 
 SRC_PATH			= ./srcs/
 
 SRCS = 	main.cpp \
-		zombieHorde.cpp \
-		Zombie.cpp
+		ClapTrap.cpp
 
 
 SRC_FILES	+=	$(SRCS)
