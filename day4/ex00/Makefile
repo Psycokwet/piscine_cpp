@@ -6,11 +6,11 @@
 #    By: scarboni <scarboni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 22:36:55 by saray             #+#    #+#              #
-#    Updated: 2022/03/09 12:28:34 by scarboni         ###   ########.fr        #
+#    Updated: 2022/03/09 13:13:55 by scarboni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 				= ClapTrap
+NAME 				= Animal
 
 OBJ_PATH			= bin/
 
@@ -21,7 +21,7 @@ CPPFLAGS 			= -Wall -Wextra -Werror -g3 -std=c++98
 SRC_PATH			= ./srcs/
 
 SRCS = 	main.cpp \
-		ClapTrap.cpp
+		Animal.cpp
 
 
 SRC_FILES	+=	$(SRCS)
