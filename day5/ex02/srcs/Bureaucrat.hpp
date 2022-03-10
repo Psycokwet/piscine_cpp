@@ -3,9 +3,9 @@
 
 # include <iostream>
 # include <string>
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -23,7 +23,7 @@ class Bureaucrat
 		int getGrade() const;
 		void incGrade();
 		void decGrade();
-		void signForm(Form &f);
+		void signForm(AForm &f);
         class GradeTooLowException : public std::exception
         {
             public:
