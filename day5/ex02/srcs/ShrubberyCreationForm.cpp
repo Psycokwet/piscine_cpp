@@ -1,18 +1,19 @@
 #include "ShrubberyCreationForm.hpp"
 
+#define FORM_NAME "ShruberryCreationForm"
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm(137, 145, "ShruberryCreationForm"), _target("")
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm(_SIGN_TRESHOLD, _EXE_TRESHOLD, FORM_NAME), _target("")
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm(137, 145, "ShruberryCreationForm"), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm(_SIGN_TRESHOLD, _EXE_TRESHOLD, FORM_NAME), _target(target)
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & src ): AForm(137, 145, "ShruberryCreationForm"), _target(src._target)
+ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & src ): AForm(_SIGN_TRESHOLD, _EXE_TRESHOLD, FORM_NAME), _target(src._target)
 {
 }
 
@@ -56,21 +57,20 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
     this->canFormBeExecuted(executor);
     std::ofstream file((this->_target + "_shruberry").c_str());
-    file << "                                  # #### ####\
-                                ### \\/#|### |/####\
-                               ##\\/#/ \\||/##/_/##/_#\
-                             ###  \\/###|/ \\/ # ###\
-                           ##_\\_#\\_\\## | #/###_/_####\
-                          ## #### # \\ #| /  #### ##/##\
-                           __#_--###`  |{,###---###-~\
-                                     \\ }{\
-                                      }}{\
-                                      }}{\
-                                 ejm  {{}\
-                                , -=-~{ .-^- _\
-                                      `}\
-                                       {\
-"
+    file << "                                  # #### ####\n";
+	file << "                                ### \\/#|### |/####\n";
+	file << "                               ##\\/#/ \\||/##/_/##/_#\n";
+	file << "                             ###  \\/###|/ \\/ # ###\n";
+	file << "                           ##_\\_#\\_\\## | #/###_/_####\n";
+	file << "                          ## #### # \\ #| /  #### ##/##\n";
+	file << "                           __#_--###`  |{,###---###-~\n";
+	file << "                                     \\ }{\n";
+	file << "                                      }}{\n";
+	file << "                                      }}{\n";
+	file << "                                 ejm  {{}\n";
+	file << "                                , -=-~{ .-^- _\n";
+	file << "                                      `}\n";
+	file << "                                       {\n";
     file.close();
 }
 

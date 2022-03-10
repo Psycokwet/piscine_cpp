@@ -16,7 +16,7 @@ class AForm
 		virtual ~AForm();
 
 		AForm &		operator=( AForm const & rhs );
-		virtual void beSigned(Bureaucrat &b) = 0;
+		void beSigned(Bureaucrat &b);
 		bool isSigned() const;
 		std::string getName() const;
 		int getGradeExe(void) const;
@@ -41,13 +41,13 @@ class AForm
                     return "GradeTooHighException";
                 }
         };
-        class FormNotSignedYet : public std::exception
+        class FormNotSignedYetException : public std::exception
         {
             public:
-                FormNotSignedYet(void) {}
+                FormNotSignedYetException(void) {}
                 virtual const char *what() const throw()
                 {
-                    return "FormNotSignedYet";
+                    return "FormNotSignedYetException";
                 }
         };
 	private:

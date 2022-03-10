@@ -77,7 +77,7 @@ void AForm::canFormBeExecuted(Bureaucrat const & executor) const
 {
 	int grade = executor.getGrade();
 	if(!this->isSigned())
-		throw AForm::FormNotSignedYet();
+		throw AForm::FormNotSignedYetException();
 	if(grade > this->_required_grade_exe)
 		throw AForm::GradeTooLowException();
 }

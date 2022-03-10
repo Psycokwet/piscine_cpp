@@ -2,6 +2,7 @@
 # define SHRUBERRYCREATIONFORM_HPP
 
 # include <iostream>
+# include <fstream>
 # include <string>
 # include "AForm.hpp"
 
@@ -16,10 +17,11 @@ class ShrubberyCreationForm : virtual public AForm
 		virtual ~ShrubberyCreationForm();
 
 		ShrubberyCreationForm &		operator=( ShrubberyCreationForm const & rhs );
-		virtual void beSigned(Bureaucrat &b);
 		std::string getTarget() const;
-
+		virtual void execute(Bureaucrat const & executor) const;
 	private:
+		static const int _SIGN_TRESHOLD = 137;
+		static const int _EXE_TRESHOLD = 145;
         std::string _target;
 
 };
