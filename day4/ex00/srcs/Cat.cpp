@@ -1,20 +1,15 @@
-#include "Animal.hpp"
+#include "Cat.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Animal::Animal(): _type("Animal")
+Cat::Cat(): Animal("Cat")
 {
 	std::cout << "New standard instance of " << *this << std::endl;
 }
 
-Animal::Animal(std::string type): _type(type)
-{
-	std::cout << "New standard instance of (heritage) " << *this << std::endl;
-}
-
-Animal::Animal( const Animal & src ) : _type(src.getType())
+Cat::Cat( const Cat & src ) : Animal(src.getType())
 {
 	std::cout << "New instance from source of " << *this << std::endl;
 }
@@ -24,9 +19,9 @@ Animal::Animal( const Animal & src ) : _type(src.getType())
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Animal::~Animal()
+Cat::~Cat()
 {
-	std::cout << "Animal is being destroyed "<< this->_type<< std::endl;
+	std::cout << "Cat is being destroyed "<< this->_type<< std::endl;
 }
 
 
@@ -34,9 +29,9 @@ Animal::~Animal()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Animal &				Animal::operator=( Animal const & rhs )
+Cat &				Cat::operator=( Cat const & rhs )
 {
-	std::cout << "Animal is being assigned from other with " << rhs << std::endl;
+	std::cout << "Cat is being assigned from other with " << rhs << std::endl;
 
 	if ( this != &rhs )
 	{
@@ -45,9 +40,9 @@ Animal &				Animal::operator=( Animal const & rhs )
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, Animal const & i )
+std::ostream &			operator<<( std::ostream & o, Cat const & i )
 {
-	o << "Animal:" << i.getType() ;
+	o << "Cat:" << i.getType() ;
 	return o;
 }
 
@@ -56,19 +51,13 @@ std::ostream &			operator<<( std::ostream & o, Animal const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void Animal::makeSound() const
+void Cat::makeSound() const
 {
-	std::cout << "Weirds animals noises" << std::endl;
+	std::cout << "Miaou !" << std::endl;
 }
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
-
-std::string Animal::getType() const
-{
-	return this->_type;
-}
-
 
 /* ************************************************************************** */

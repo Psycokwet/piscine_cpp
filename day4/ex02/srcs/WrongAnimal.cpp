@@ -1,20 +1,20 @@
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Animal::Animal(): _type("Animal")
+WrongAnimal::WrongAnimal(): _type("WrongAnimal")
 {
 	std::cout << "New standard instance of " << *this << std::endl;
 }
 
-Animal::Animal(std::string type): _type(type)
+WrongAnimal::WrongAnimal(std::string type): _type(type)
 {
 	std::cout << "New standard instance of (heritage) " << *this << std::endl;
 }
 
-Animal::Animal( const Animal & src ) : _type(src.getType())
+WrongAnimal::WrongAnimal( const WrongAnimal & src ) : _type(src.getType())
 {
 	std::cout << "New instance from source of " << *this << std::endl;
 }
@@ -24,9 +24,9 @@ Animal::Animal( const Animal & src ) : _type(src.getType())
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "Animal is being destroyed "<< this->_type<< std::endl;
+	std::cout << "WrongAnimal is being destroyed "<< this->_type<< std::endl;
 }
 
 
@@ -34,9 +34,9 @@ Animal::~Animal()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Animal &				Animal::operator=( Animal const & rhs )
+WrongAnimal &				WrongAnimal::operator=( WrongAnimal const & rhs )
 {
-	std::cout << "Animal is being assigned from other with " << rhs << std::endl;
+	std::cout << "WrongAnimal is being assigned from other with " << rhs << std::endl;
 
 	if ( this != &rhs )
 	{
@@ -45,9 +45,9 @@ Animal &				Animal::operator=( Animal const & rhs )
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, Animal const & i )
+std::ostream &			operator<<( std::ostream & o, WrongAnimal const & i )
 {
-	o << "Animal:" << i.getType() ;
+	o << "WrongAnimal:" << i.getType() ;
 	return o;
 }
 
@@ -56,16 +56,16 @@ std::ostream &			operator<<( std::ostream & o, Animal const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void Animal::makeSound() const
+void WrongAnimal::makeSound() const
 {
-	std::cout << "Weirds animals noises" << std::endl;
+	std::cout << "Weirds wrong animals noises" << std::endl;
 }
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-std::string Animal::getType() const
+std::string WrongAnimal::getType() const
 {
 	return this->_type;
 }

@@ -1,20 +1,15 @@
-#include "Animal.hpp"
+#include "Dog.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Animal::Animal(): _type("Animal")
+Dog::Dog(): Animal("Dog"), _brain(new Brain())
 {
 	std::cout << "New standard instance of " << *this << std::endl;
 }
 
-Animal::Animal(std::string type): _type(type)
-{
-	std::cout << "New standard instance of (heritage) " << *this << std::endl;
-}
-
-Animal::Animal( const Animal & src ) : _type(src.getType())
+Dog::Dog( const Dog & src ) : Animal(src.getType()), _brain(new Brain(*(src._brain)))
 {
 	std::cout << "New instance from source of " << *this << std::endl;
 }
@@ -24,9 +19,10 @@ Animal::Animal( const Animal & src ) : _type(src.getType())
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Animal::~Animal()
+Dog::~Dog()
 {
-	std::cout << "Animal is being destroyed "<< this->_type<< std::endl;
+	delete this->_brain;
+	std::cout << "Dog is being destroyed "<< this->_type<< std::endl;
 }
 
 
@@ -34,20 +30,20 @@ Animal::~Animal()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Animal &				Animal::operator=( Animal const & rhs )
+Dog &				Dog::operator=( Dog const & rhs )
 {
-	std::cout << "Animal is being assigned from other with " << rhs << std::endl;
+	std::cout << "Dog is being assigned from other with " << rhs << std::endl;
 
 	if ( this != &rhs )
 	{
-		this->_type = rhs._type;
+		this->_brain = rhs._brain;
 	}
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, Animal const & i )
+std::ostream &			operator<<( std::ostream & o, Dog const & i )
 {
-	o << "Animal:" << i.getType() ;
+	o << "Dog:" << i.getType() << *(i.getBrain());
 	return o;
 }
 
@@ -56,18 +52,17 @@ std::ostream &			operator<<( std::ostream & o, Animal const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void Animal::makeSound() const
+void Dog::makeSound() const
 {
-	std::cout << "Weirds animals noises" << std::endl;
+	std::cout << "Miaou !" << std::endl;
 }
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
-
-std::string Animal::getType() const
+Brain *Dog::getBrain() const
 {
-	return this->_type;
+	return this->_brain;
 }
 
 

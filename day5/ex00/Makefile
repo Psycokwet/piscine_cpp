@@ -6,7 +6,7 @@
 #    By: scarboni <scarboni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 22:36:55 by saray             #+#    #+#              #
-#    Updated: 2022/03/10 13:32:12 by scarboni         ###   ########.fr        #
+#    Updated: 2022/03/10 09:38:56 by scarboni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,11 +21,7 @@ CPPFLAGS 			= -Wall -Wextra -Werror -g3 -std=c++98
 SRC_PATH			= ./srcs/
 
 SRCS = 	main.cpp \
-		WrongAnimal.cpp \
-		Animal.cpp \
-		Dog.cpp  \
-		Cat.cpp  \
-		WrongCat.cpp
+		Bureaucrat.cpp
 
 
 SRC_FILES	+=	$(SRCS)

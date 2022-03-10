@@ -1,20 +1,15 @@
-#include "Animal.hpp"
+#include "WrongCat.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Animal::Animal(): _type("Animal")
+WrongCat::WrongCat(): WrongAnimal("WrongCat")
 {
 	std::cout << "New standard instance of " << *this << std::endl;
 }
 
-Animal::Animal(std::string type): _type(type)
-{
-	std::cout << "New standard instance of (heritage) " << *this << std::endl;
-}
-
-Animal::Animal( const Animal & src ) : _type(src.getType())
+WrongCat::WrongCat( const WrongCat & src ) : WrongAnimal(src.getType())
 {
 	std::cout << "New instance from source of " << *this << std::endl;
 }
@@ -24,9 +19,9 @@ Animal::Animal( const Animal & src ) : _type(src.getType())
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Animal::~Animal()
+WrongCat::~WrongCat()
 {
-	std::cout << "Animal is being destroyed "<< this->_type<< std::endl;
+	std::cout << "WrongCat is being destroyed "<< this->_type<< std::endl;
 }
 
 
@@ -34,9 +29,9 @@ Animal::~Animal()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Animal &				Animal::operator=( Animal const & rhs )
+WrongCat &				WrongCat::operator=( WrongCat const & rhs )
 {
-	std::cout << "Animal is being assigned from other with " << rhs << std::endl;
+	std::cout << "WrongCat is being assigned from other with " << rhs << std::endl;
 
 	if ( this != &rhs )
 	{
@@ -45,9 +40,9 @@ Animal &				Animal::operator=( Animal const & rhs )
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, Animal const & i )
+std::ostream &			operator<<( std::ostream & o, WrongCat const & i )
 {
-	o << "Animal:" << i.getType() ;
+	o << "WrongCat:" << i.getType() ;
 	return o;
 }
 
@@ -56,19 +51,13 @@ std::ostream &			operator<<( std::ostream & o, Animal const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void Animal::makeSound() const
+void WrongCat::makeSound() const
 {
-	std::cout << "Weirds animals noises" << std::endl;
+	std::cout << "Wrong miaou !" << std::endl;
 }
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
-
-std::string Animal::getType() const
-{
-	return this->_type;
-}
-
 
 /* ************************************************************************** */

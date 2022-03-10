@@ -1,20 +1,20 @@
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Animal::Animal(): _type("Animal")
+AAnimal::AAnimal(): _type("AAnimal")
 {
 	std::cout << "New standard instance of " << *this << std::endl;
 }
 
-Animal::Animal(std::string type): _type(type)
+AAnimal::AAnimal(std::string type): _type(type)
 {
 	std::cout << "New standard instance of (heritage) " << *this << std::endl;
 }
 
-Animal::Animal( const Animal & src ) : _type(src.getType())
+AAnimal::AAnimal( const AAnimal & src ) : _type(src.getType())
 {
 	std::cout << "New instance from source of " << *this << std::endl;
 }
@@ -24,9 +24,9 @@ Animal::Animal( const Animal & src ) : _type(src.getType())
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Animal::~Animal()
+AAnimal::~AAnimal()
 {
-	std::cout << "Animal is being destroyed "<< this->_type<< std::endl;
+	std::cout << "AAnimal is being destroyed "<< this->_type<< std::endl;
 }
 
 
@@ -34,9 +34,9 @@ Animal::~Animal()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Animal &				Animal::operator=( Animal const & rhs )
+AAnimal &				AAnimal::operator=( AAnimal const & rhs )
 {
-	std::cout << "Animal is being assigned from other with " << rhs << std::endl;
+	std::cout << "AAnimal is being assigned from other with " << rhs << std::endl;
 
 	if ( this != &rhs )
 	{
@@ -45,9 +45,9 @@ Animal &				Animal::operator=( Animal const & rhs )
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, Animal const & i )
+std::ostream &			operator<<( std::ostream & o, AAnimal const & i )
 {
-	o << "Animal:" << i.getType() ;
+	o << "AAnimal:" << i.getType() ;
 	return o;
 }
 
@@ -56,7 +56,7 @@ std::ostream &			operator<<( std::ostream & o, Animal const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void Animal::makeSound() const
+void AAnimal::makeSound() const
 {
 	std::cout << "Weirds animals noises" << std::endl;
 }
@@ -65,7 +65,7 @@ void Animal::makeSound() const
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-std::string Animal::getType() const
+std::string AAnimal::getType() const
 {
 	return this->_type;
 }

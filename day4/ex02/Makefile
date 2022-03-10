@@ -6,7 +6,7 @@
 #    By: scarboni <scarboni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 22:36:55 by saray             #+#    #+#              #
-#    Updated: 2022/03/10 13:32:12 by scarboni         ###   ########.fr        #
+#    Updated: 2022/03/10 08:50:10 by scarboni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,10 +22,11 @@ SRC_PATH			= ./srcs/
 
 SRCS = 	main.cpp \
 		WrongAnimal.cpp \
-		Animal.cpp \
+		AAnimal.cpp \
 		Dog.cpp  \
 		Cat.cpp  \
-		WrongCat.cpp
+		WrongCat.cpp  \
+		Brain.cpp
 
 
 SRC_FILES	+=	$(SRCS)
