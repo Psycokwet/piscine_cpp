@@ -13,7 +13,6 @@ class RobotomyRequestForm : virtual public AForm
 {
 
 	public:
-		RobotomyRequestForm();
 		RobotomyRequestForm(std::string target);
 		RobotomyRequestForm( RobotomyRequestForm const & src );
 		virtual ~RobotomyRequestForm();
@@ -25,6 +24,8 @@ class RobotomyRequestForm : virtual public AForm
 		static const int _SIGN_TRESHOLD = 72;
 		static const int _EXE_TRESHOLD = 45;
         std::string _target;
+		
+		RobotomyRequestForm();
 
 };
 

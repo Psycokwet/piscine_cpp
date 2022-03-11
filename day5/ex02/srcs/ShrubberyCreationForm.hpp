@@ -11,7 +11,6 @@ class ShrubberyCreationForm : virtual public AForm
 {
 
 	public:
-		ShrubberyCreationForm();
 		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm( ShrubberyCreationForm const & src );
 		virtual ~ShrubberyCreationForm();
@@ -23,6 +22,8 @@ class ShrubberyCreationForm : virtual public AForm
 		static const int _SIGN_TRESHOLD = 137;
 		static const int _EXE_TRESHOLD = 145;
         std::string _target;
+		
+		ShrubberyCreationForm();
 
 };
 

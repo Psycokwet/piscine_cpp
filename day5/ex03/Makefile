@@ -6,7 +6,7 @@
 #    By: scarboni <scarboni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 22:36:55 by saray             #+#    #+#              #
-#    Updated: 2022/03/10 14:13:23 by scarboni         ###   ########.fr        #
+#    Updated: 2022/03/11 06:53:26 by scarboni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ SRCS = 	main.cpp \
 		AForm.cpp \
 		ShrubberyCreationForm.cpp \
 		RobotomyRequestForm.cpp \
-		PresidentialPardonForm.cpp
+		PresidentialPardonForm.cpp \
+		Intern.cpp
 
 
 SRC_FILES	+=	$(SRCS)

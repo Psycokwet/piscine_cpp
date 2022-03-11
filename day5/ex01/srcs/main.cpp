@@ -18,7 +18,7 @@ int main()
     {
         std::cerr << e.what() << '\n';
     }
-    std::cout << "Should not sign" << std::endl;
+    std::cout << std::endl << "Should not sign" << std::endl;
     try
     {
         Bureaucrat todd(42, "Todd");

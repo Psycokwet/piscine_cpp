@@ -11,7 +11,7 @@ int main()
     try
     {
         Bureaucrat todd(42, "Todd");
-        ShrubberyCreationForm f1;
+        ShrubberyCreationForm f1("file");
         std::cout << todd << std::endl;
         std::cout << f1 << std::endl;
 		todd.signForm(f1);

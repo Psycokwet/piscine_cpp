@@ -11,7 +11,6 @@ class PresidentialPardonForm : virtual public AForm
 {
 
 	public:
-		PresidentialPardonForm();
 		PresidentialPardonForm(std::string target);
 		PresidentialPardonForm( PresidentialPardonForm const & src );
 		virtual ~PresidentialPardonForm();
@@ -23,6 +22,8 @@ class PresidentialPardonForm : virtual public AForm
 		static const int _SIGN_TRESHOLD = 25;
 		static const int _EXE_TRESHOLD = 5;
         std::string _target;
+
+		PresidentialPardonForm();
 
 };
 
