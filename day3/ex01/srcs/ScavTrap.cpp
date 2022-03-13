@@ -59,7 +59,9 @@ ScavTrap &				ScavTrap::operator=( ScavTrap const & rhs )
 
 std::ostream &			operator<<( std::ostream & o, ScavTrap const & i )
 {	
-	o << "ST: ScavTrap:" << (ClapTrap)i;
+	o << "ST: ScavTrap:" << *((ClapTrap *)(&i));
+	// o << "ST: ScavTrap:" << (static_cast<const ClapTrap &>(i));
+	// o << "ST: ScavTrap:" << (dynamic_cast<const ClapTrap &>(i));
 	return o;
 }
 
