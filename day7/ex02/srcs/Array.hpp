@@ -8,9 +8,9 @@ template <typename T>
 class Array
 {
 	public:
-		Array<T>(unsigned int size = 0):_size(size), _array(new T[size]())
+		Array<T>(unsigned int size = 0):_size(size), _array(new T[_size]())
 		{}
-		Array<T>( Array<T> const & src ):_size(src._size), _array(new T[size]())
+		Array<T>( Array<T> const & src ):_size(src._size), _array(new T[_size]())
 		{
 			for(unsigned int i; i< src._size; i++)
 				this->_array[i] = src._array[i];
@@ -28,7 +28,7 @@ class Array
 			this->_size = rhs._size;
 			if (this->_array != NULL)
 				delete [] this->_array;
-			this->_array = new T[size]();
+			this->_array = new T[_size]();
 			for(unsigned int i; i < rhs._size; i++)
 				*this->_array[i] = rhs._array[i];
 			return *this;
