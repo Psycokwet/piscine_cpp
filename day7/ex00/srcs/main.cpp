@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "Whatever.hpp"
+#include "whatever.hpp"
 #include "Awesome.hpp"
 
 
@@ -21,6 +21,14 @@ int main()
 		std::cout << a << " " << b << std::endl;
 		std::cout << max(a, b) << std::endl;
 		std::cout << min(a, b) << std::endl;
+	}
+	{
+		int a = 22, b = 24;
+		std::cout << a << " " << b << std::endl;
+		swap<int>(a, b);
+		std::cout << a << " " << b << std::endl;
+		std::cout << max<int>(a, b) << std::endl;
+		std::cout << min<int>(a, b) << std::endl;
 	}
 	{
 		int a = 2;
