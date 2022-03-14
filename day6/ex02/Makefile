@@ -6,7 +6,7 @@
 #    By: scarboni <scarboni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 22:36:55 by saray             #+#    #+#              #
-#    Updated: 2022/03/14 05:52:04 by scarboni         ###   ########.fr        #
+#    Updated: 2022/03/14 06:00:54 by scarboni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,7 @@ CPPFLAGS 			= -Wall -Wextra -Werror -g3 -std=c++98
 
 SRC_PATH			= ./srcs/
 
-SRCS = 	main.cpp \
-		Converter.cpp
+SRCS = 	main.cpp Base.cpp A.cpp B.cpp C.cpp
 
 
 SRC_FILES	+=	$(SRCS)
@@ -62,27 +61,6 @@ re: fclean all
 LEAKS = 
 
 test:	$(NAME)
-	$(LEAKS) ./$(NAME) A
-	$(LEAKS) ./$(NAME) m
-	$(LEAKS) ./$(NAME) 0
-	$(LEAKS) ./$(NAME) -0
-	$(LEAKS) ./$(NAME) +0
-	$(LEAKS) ./$(NAME) 1
-	$(LEAKS) ./$(NAME) 42
-	$(LEAKS) ./$(NAME) -42
-	$(LEAKS) ./$(NAME) 1.42
-	$(LEAKS) ./$(NAME) 0.0
-	$(LEAKS) ./$(NAME) -0.0
-	$(LEAKS) ./$(NAME) +0.0
-	$(LEAKS) ./$(NAME) -90.04
-	$(LEAKS) ./$(NAME) nan
-	$(LEAKS) ./$(NAME) nanf
-	$(LEAKS) ./$(NAME) -inf
-	$(LEAKS) ./$(NAME) -inff
-	$(LEAKS) ./$(NAME) +inf
-	$(LEAKS) ./$(NAME) +inff
-	$(LEAKS) ./$(NAME) +++---inff
-	$(LEAKS) ./$(NAME) +++inff
-	$(LEAKS) ./$(NAME) 46565465454765754357
+	$(LEAKS) ./$(NAME)
 
 .PHONY: clean fclean re bonus

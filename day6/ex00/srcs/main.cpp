@@ -14,12 +14,5 @@ int main(int argc, char **argv)
 	const std::string s = argv[1];
 	Converter c(s);
 	std::cout << c << std::endl;
-
-	// std::cout << "test :" << FromString<int>(s)<< std::endl;
-	// std::cout << "test eq :" << (ToString(FromString<double>(s)) == s)<< std::endl;
-	// std::cout << "test ts :" << ToString(FromString<double>(s))<< std::endl;
-	// std::cout << "test :" << FromString<float>(s)<< std::endl;
-	// std::cout << "test :" << FromString<double>(s)<< std::endl;
-	// std::cout << "test :" << FromString<char>(s)<< std::endl;
 	return 0;
 }
