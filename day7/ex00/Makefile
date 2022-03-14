@@ -6,7 +6,7 @@
 #    By: scarboni <scarboni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 22:36:55 by saray             #+#    #+#              #
-#    Updated: 2022/03/14 09:26:50 by scarboni         ###   ########.fr        #
+#    Updated: 2022/03/14 15:33:18 by scarboni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,8 +57,8 @@ fclean:
 
 re: fclean all
 
-# LEAKS = valgrind 
 LEAKS = 
+# LEAKS = valgrind 
 
 test:	$(NAME)
 	$(LEAKS) ./$(NAME)

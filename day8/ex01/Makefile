@@ -6,7 +6,7 @@
 #    By: scarboni <scarboni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 22:36:55 by saray             #+#    #+#              #
-#    Updated: 2022/03/14 15:35:06 by scarboni         ###   ########.fr        #
+#    Updated: 2022/03/14 14:30:16 by scarboni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CPPFLAGS 			= -Wall -Wextra -Werror -g3 -std=c++98
 
 SRC_PATH			= ./srcs/
 
-SRCS = 	main.cpp
+SRCS = 	main.cpp Span.cpp
 
 
 SRC_FILES	+=	$(SRCS)
@@ -56,8 +56,9 @@ fclean:
 	@echo "\033[0m"		
 
 re: fclean all
-cd ../ex02 ; make test; make fclean
 
+# LEAKS = valgrind 
+LEAKS = 
 
 test:	$(NAME)
 	$(LEAKS) ./$(NAME)

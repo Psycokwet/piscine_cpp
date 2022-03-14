@@ -12,7 +12,7 @@ class Array
 		{}
 		Array<T>( Array<T> const & src ):_size(src._size), _array(new T[_size]())
 		{
-			for(unsigned int i; i< src._size; i++)
+			for(unsigned int i = 0; i< src._size; i++)
 				this->_array[i] = src._array[i];
 		}
 		~Array<T>()
