@@ -71,5 +71,6 @@ int main()
 	(void)unknown;
 	identify(unknown);
 	identify(*unknown);
+	delete unknown;
 	return 0;
 }
