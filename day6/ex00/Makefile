@@ -6,7 +6,7 @@
 #    By: scarboni <scarboni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 22:36:55 by saray             #+#    #+#              #
-#    Updated: 2022/03/14 05:52:04 by scarboni         ###   ########.fr        #
+#    Updated: 2022/03/14 13:07:50 by scarboni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,8 +81,5 @@ test:	$(NAME)
 	$(LEAKS) ./$(NAME) -inff
 	$(LEAKS) ./$(NAME) +inf
 	$(LEAKS) ./$(NAME) +inff
-	$(LEAKS) ./$(NAME) +++---inff
-	$(LEAKS) ./$(NAME) +++inff
-	$(LEAKS) ./$(NAME) 46565465454765754357
 
 .PHONY: clean fclean re bonus

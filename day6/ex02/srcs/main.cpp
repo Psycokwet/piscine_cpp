@@ -40,7 +40,7 @@ void identify(Base& p)
 	std::string type;
 	try
 	{
-		dynamic_cast<A&>(p);
+		(void)(dynamic_cast<A&>(p));
 		type = "A";
 	}
 	catch(std::exception exp) {
@@ -48,7 +48,7 @@ void identify(Base& p)
 
 	try
 	{
-		dynamic_cast<B&>(p);
+		(void)(dynamic_cast<B&>(p));
 		type = "B";
 	}
 	catch(std::exception exp) {
@@ -56,7 +56,7 @@ void identify(Base& p)
 
 	try
 	{
-		dynamic_cast<C&>(p);
+		(void)(dynamic_cast<C&>(p));
 		type = "C";
 	}
 	catch(std::exception exp) {
