@@ -1,49 +1,30 @@
 #ifndef MUTANTSTACK_HPP
 # define MUTANTSTACK_HPP
 
+# include <stack>
 # include <iostream>
-# include <string>
-
-class MutantStack
+template<typename T>
+class MutantStack: public std::stack<T>
 {
 
-	public:
-		static const int HIGHEST_GRADE = 1;
-		static const int LOWEST_GRADE = 150;
-		MutantStack(int grade, std::string name);
-		MutantStack();
-		MutantStack( MutantStack const & src );
-		virtual ~MutantStack();
+public:
 
-		MutantStack &		operator=( MutantStack const & rhs );
-		std::string getName() const;
-		int getGrade() const;
-		void incGrade();
-		void decGrade();
-        class GradeTooLowException : public std::exception
-        {
-            public:
-                GradeTooLowException(void) {}
-                virtual const char *what() const throw()
-                {
-                    return "GradeTooLowException";
-                }
-        };
-        class GradeTooHighException : public std::exception
-        {
-            public:
-                GradeTooHighException(void) {}
-                virtual const char *what() const throw()
-                {
-                    return "GradeTooHighException";
-                }
-        };
-	private:
-		std::string const _name;
-		int _grade;
+	MutantStack<T>() {}
+	MutantStack<T>(const MutantStack<T> &src) {*this = src;}
+	~MutantStack<T>() {}
+
+	MutantStack<T>	&operator=( const MutantStack<T> &rhs ) {
+		(void)rhs;
+		return *this;
+	}
+
+	typedef typename std::stack<T>::container_type::iterator iterator;
+	
+	iterator	begin() {return this->c.begin();}
+	iterator	end() {return this->c.end();}
+
+private:
 
 };
-
-std::ostream &			operator<<( std::ostream & o, MutantStack const & i );
 
 #endif /* ****************************************************** MUTANTSTACK_HPP */

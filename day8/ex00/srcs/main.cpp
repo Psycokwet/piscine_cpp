@@ -19,9 +19,9 @@ int main()
 	}
     std::cout << "};\n";
 	int needle = 12;
-	int index = easyfind(l, needle);
-	if (index != NOT_FOUND)
-    	std::cout << "needle " << needle << " found at " << index << std::endl;
+	std::list<int>::iterator result = easyfind(l, needle);
+	if (result != l.end())
+    	std::cout << "needle  found : " << *result << std::endl;
 	else
     	std::cout << "needle " << needle << " not found" << std::endl;
 	return 0;

@@ -6,7 +6,7 @@
 #    By: scarboni <scarboni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 22:36:55 by saray             #+#    #+#              #
-#    Updated: 2022/03/14 14:38:45 by scarboni         ###   ########.fr        #
+#    Updated: 2022/03/15 15:58:38 by scarboni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CPPFLAGS 			= -Wall -Wextra -Werror -g3 -std=c++98
 
 SRC_PATH			= ./srcs/
 
-SRCS = 	main.cpp MutantStack.cpp
+SRCS = 	main.cpp
 
 
 SRC_FILES	+=	$(SRCS)
